@@ -27,13 +27,29 @@ Python, Ollama (qwen2.5vl:3b), Streamlit, Pandas, Pillow
 ```
 
 ## Results
-Tested on 5 sample receipts:
+Sample output from 5 test receipts:
+
+| # | Store | Date | Total | Category |
+|---|---|---|---|---|
+| 1 | FreshMart | 10/26/2023 | 39.34 | Groceries |
+| 2 | Target | 10/30/2025 | 7.98 | Other |
+| 3 | Walmart | 09/12/2026 | 10.70 | Groceries |
+| 4 | My Bakery | 07/09/2025 | 960.00 | Food |
+| 5 | Lorem Ipsum Dolor Sit Amet | 01/01/2018 | 84.80 | Groceries |
+
+Accuracy check against the original receipts:
 
 | Field | Correct |
 |---|---|
-| Store | X / 5 |
-| Date | X / 5 |
-| Total | X / 5 |
+| Store | [X] / 5 |
+| Date | [X] / 5 |
+| Total | [X] / 5 |
+
+Notes:
+- Receipt 1 (FreshMart) was extracted fully correctly.
+- Receipt 2's total varied between runs (7.98 and 74.98) before I fixed the random seed.
+- Receipt 4's total of 960 may be a different currency, which the app doesn't detect yet.
+- Receipt 5 is a dummy "Lorem Ipsum" template, so its values are not meaningful.
 
 ## Limitations
 - Small vision models can misread blurry or crumpled receipts
