@@ -41,9 +41,15 @@ Accuracy check against the original receipts:
 
 | Field | Correct |
 |---|---|
-| Store | [X] / 5 |
-| Date | [X] / 5 |
-| Total | [X] / 5 |
+| Store | 4 / 5 |
+| Date | 4 / 5 |
+| Total | 4 / 5 |
+
+Notes:
+- Receipts 1, 3 and 4 were extracted fully correctly.
+- Receipt 2 (Target) had a wrong date and total. The model returned a date that is not on the receipt, and the receipt's own totals are inconsistent, which made it a hard case.
+- Receipt 4's total of 960 is correct as printed, but it is probably a different currency, which the app doesn't detect yet.
+- Receipt 5 prints no store name, so the model built one from the address text.
 
 Notes:
 - Receipt 1 (FreshMart) was extracted fully correctly.
